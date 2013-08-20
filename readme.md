@@ -48,6 +48,20 @@ This will...
 
 Design documents live in the `/ddocs` folder in JS files named after the databases where they'll be pushed to. So, a file named `logs.js` will be pushed to a database named `logs`. To see an example design doc in the format Express-Cloudant understands, open up `/ddocs/_users.js`.
 
+## Launch on Heroku
+
+Heroku uses a `.env` file to store environment variables like this:
+
+    USERNAME=derpherpburp
+    PASSWORD=friendshipismaniacal
+
+To push those variables to your Heroku instance, do `heroku config:push`. Then:
+
+    heroku create [app]
+    git push heroku master
+
+Now your app should be live. Easy, eh?
+
 ## Get Involved!
 
 Only together can we expand the universe of human potential! Fork the project on [GitHub](https://github.com/cloudant-labs/express-cloudant), open an issue, or submit a pull request. Everything helps :D
