@@ -1,6 +1,6 @@
 var request = require('request')
   , path = require('path')
-  , config = require(path.join(__dirname, '..', 'config')
+  , config = require(path.join(__dirname, '..', 'config'))
   , proxy_url = "https://" + config.user + ".cloudant.com"
   ;
 
@@ -16,5 +16,5 @@ module.exports = function(prefix){
     } else {
       next();
     }
-  }
-}
+  };
+};
