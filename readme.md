@@ -25,10 +25,7 @@ You're good to go!
 
 ## Configuration
 
-Express-Cloudant uses a `config.js` file to store credentials and the like. You can use `config_example.js` as the basis for your `config.json` by doing this:
-
-    cp config_example.js config.js
-    $EDITOR config.js // enter your credentials
+Express-Cloudant uses a `config.js` file to store credentials and the like. A sample one comes in the repo; edit it and enter your Cloudant credentials, **BUT DON'T GIT COMMIT IT!** You don't want your Cloudant password hanging out in plaintext on some public repo, do you?
 
 ## Running
 
