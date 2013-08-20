@@ -1,5 +1,6 @@
 var request = require('request')
-  , config = require('../config')
+  , path = require('path')
+  , config = require(path.join(__dirname, '..', 'config')
   , proxy_url = "https://" + config.user + ".cloudant.com"
   ;
 
