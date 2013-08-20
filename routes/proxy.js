@@ -1,6 +1,5 @@
 var request = require('request')
   , config = require('../config.json')
-  , admin_url = "https://" + config.user + ":" + config.pass + "@" + config.user + ".cloudant.com"
   , proxy_url = "https://" + config.user + ".cloudant.com"
   ;
 

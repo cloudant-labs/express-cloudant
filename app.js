@@ -17,8 +17,8 @@ app.set('views', __dirname + '/views');
 app.set('view engine', 'jade');
 app.use(express.favicon());
 app.use(express.logger('dev'));
-// all requests to /db* get forwarded to Cloudant through the proxy
-app.use(proxy('db'));
+// all requests to /proxy* get forwarded to Cloudant through the proxy
+app.use(proxy('proxy'));
 app.use(express.bodyParser());
 app.use(express.methodOverride());
 app.use(app.router);
@@ -30,6 +30,8 @@ if ('development' == app.get('env')) {
 }
 
 app.get('/', routes.index);
+app.get('/readme', require('./routes/readme'));
+require('./routes/api')(app, 'api')
 
 http.createServer(app).listen(app.get('port'), function(){
   console.log('Express server listening on port ' + app.get('port'));

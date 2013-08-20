@@ -8,7 +8,8 @@
   "dependencies": {
     "express": "3.3.3",
     "jade": "*",
-    "request": "~2.27.0"
+    "request": "~2.27.0",
+    "nano": "~4.1.1"
   },
   "devDependencies": {
     "grunt": "~0.4.1",
@@ -16,6 +17,7 @@
     "grunt-contrib-cssmin": "~0.6.1",
     "grunt-contrib-uglify": "~0.2.2",
     "grunt-contrib-jshint": "~0.6.3",
-    "grunt-couchapp": "~0.1.0"
+    "grunt-couchapp": "~0.1.0",
+    "couchapp": "~0.10.0"
   }
 }
