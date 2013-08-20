@@ -1,5 +1,5 @@
 var request = require('request')
-  , config = require('../config.json')
+  , config = require('../config')
   , proxy_url = "https://" + config.user + ".cloudant.com"
   ;
 

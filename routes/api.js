@@ -1,4 +1,4 @@
-var config = require('../config.json')
+var config = require('../config')
   , admin_url = "https://" + config.user + ":" + config.pass + "@" + config.user + ".cloudant.com"
   , nano = require('nano')(admin_url)
   ;

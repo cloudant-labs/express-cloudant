@@ -4,10 +4,10 @@ A template for [Node.js](http://nodejs.org/) projects from your friends at [Clou
 
 ## Features
 
-* Reverse proxy to your Cloudant account at [/proxy](/proxy), ending all CORS headaches.
+* Built-in reverse proxy to your Cloudant account at [/proxy](/proxy), ending all CORS headaches.
 * Custom API in `routes/api.js` using [nano](https://github.com/dscape/nano), exposing your database in a more controlled fashion.
 * Uses [Grunt](http://gruntjs.com/) to manage static assets and design documents.
-* Manage design documents in the `ddocs` folder as JavaScript rather than raw JSON.
+* Manages design documents in the `ddocs` folder as JavaScript rather than raw JSON.
 
 ## Install
 

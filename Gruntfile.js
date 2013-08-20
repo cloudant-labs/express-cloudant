@@ -1,4 +1,4 @@
-var config = require('./config.json');
+var config = require('./config');
 
 module.exports = function(grunt) {
 
@@ -6,7 +6,7 @@ module.exports = function(grunt) {
   grunt.initConfig({
     pkg: grunt.file.readJSON('package.json'),
     jshint: {
-      files: ['assets/js/app.js'],
+      files: ['assets/js/app.js', 'ddocs/*.js'],
       options: {
         browser: true
       , laxcomma: true

@@ -12,7 +12,7 @@ ddoc = {
   , shows: {
       // show code goes here
     }
-}
+};
 
 // uncomment the line below to push this to Cloudant
 // module.exports = ddoc;
