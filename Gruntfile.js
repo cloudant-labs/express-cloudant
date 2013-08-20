@@ -22,6 +22,7 @@ module.exports = function(grunt) {
         src: [
           'assets/js/jquery.js'
         , 'assets/js/showdown.js'
+        , 'assets/js/pouchdb.js'
         , 'assets/js/app.js'
         ],
         // the location of the resulting JS file
