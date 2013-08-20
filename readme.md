@@ -30,8 +30,6 @@ Express-Cloudant uses a `config.js` file to store credentials and the like. You 
     cp config_example.js config.js
     $EDITOR config.js // enter your credentials
 
-`config.js` is ignored by `.gitignore` so you're never in danger of committing the credentials you enter therein.
-
 ## Running
 
 Do this:
