@@ -25,12 +25,12 @@ You're good to go!
 
 ## Configuration
 
-Express-Cloudant uses a `config.json` file to store credentials and the like. You can use `config_example.json` as the basis for your `config.json` by doing this:
+Express-Cloudant uses a `config.js` file to store credentials and the like. You can use `config_example.js` as the basis for your `config.json` by doing this:
 
-    cp config_example.json config.json
-    $EDITOR config.json // enter your credentials
+    cp config_example.js config.js
+    $EDITOR config.js // enter your credentials
 
-`config.json` is ignored by `.gitignore` so you're never in danger of committing the credentials you enter therein.
+`config.js` is ignored by `.gitignore` so you're never in danger of committing the credentials you enter therein.
 
 ## Running
 
