@@ -25,12 +25,7 @@ You're good to go!
 
 ## Configuration
 
-Express-Cloudant uses a `config.js` file to store credentials and the like. You can use `config_example.js` as the basis for your `config.json` by doing this:
-
-    cp config_example.js config.js
-    $EDITOR config.js // enter your credentials
-
-`config.js` is ignored by `.gitignore` so you're never in danger of committing the credentials you enter therein.
+Express-Cloudant uses a `config.js` file to store credentials and the like. A sample one comes in the repo; edit it and enter your Cloudant credentials, **BUT DON'T GIT COMMIT IT!** You don't want your Cloudant password hanging out in plaintext on some public repo, do you?
 
 ## Running
 
@@ -47,6 +42,20 @@ This will...
 ## Design Documents
 
 Design documents live in the `/ddocs` folder in JS files named after the databases where they'll be pushed to. So, a file named `logs.js` will be pushed to a database named `logs`. To see an example design doc in the format Express-Cloudant understands, open up `/ddocs/_users.js`.
+
+## Launch on Heroku
+
+Heroku uses a `.env` file to store environment variables like this:
+
+    USERNAME=derpherpburp
+    PASSWORD=friendshipismaniacal
+
+To push those variables to your Heroku instance, do `heroku config:push`. Then:
+
+    heroku create [app]
+    git push heroku master
+
+Now your app should be live. Easy, eh?
 
 ## Get Involved!
 
