@@ -10,7 +10,8 @@ module.exports = function(prefix){
       var db_url = proxy_url + proxy_path[1];
       req.pipe(request({
         uri: db_url,
-        method: req.method
+        method: req.method,
+        qs: req.query
       })).pipe(res);
     } else {
       next();
