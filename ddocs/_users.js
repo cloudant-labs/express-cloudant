@@ -2,14 +2,14 @@ var couchapp = require('couchapp');
 
 ddoc = {
     // name of the design doc
-    _id: '_design/queries'
-  , views: {
+    _id: '_design/queries',
+    views: {
       // view code goes here
-    }
-  , lists: {
+    },
+    lists: {
       // list code goes here
-    }
-  , shows: {
+    },
+    shows: {
       // show code goes here
     }
 };

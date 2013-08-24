@@ -6,10 +6,15 @@ module.exports = function(grunt) {
   grunt.initConfig({
     pkg: grunt.file.readJSON('package.json'),
     jshint: {
-      files: ['assets/js/app.js', 'ddocs/*.js', 'routes/*.js'],
+      files: [
+        'assets/js/app.js', 
+        'ddocs/*.js', 
+        'routes/*.js',
+        'Gruntfile.js',
+        "app.js"
+      ],
       options: {
         browser: true
-      , laxcomma: true
       }
     },
     concat: {
@@ -20,10 +25,10 @@ module.exports = function(grunt) {
       dist: {
         // the files to concatenate
         src: [
-          'assets/js/jquery.js'
-        , 'assets/js/showdown.js'
-        , 'assets/js/pouchdb.js'
-        , 'assets/js/app.js'
+          'assets/js/jquery.js',
+          'assets/js/showdown.js',
+          'assets/js/pouchdb.js',
+          'assets/js/app.js'
         ],
         // the location of the resulting JS file
         dest: 'public/js/app.js'
@@ -55,11 +60,11 @@ module.exports = function(grunt) {
 
   // Default task(s).
   grunt.registerTask('default', [
-    'jshint'
-  , 'concat'
-  , 'uglify'
-  , 'cssmin'
-  , 'couchapp'
+    'jshint',
+    'concat',
+    'uglify',
+    'cssmin',
+    'couchapp'
   ]);
 
 };

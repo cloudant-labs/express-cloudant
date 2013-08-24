@@ -3,11 +3,11 @@
  * Module dependencies.
  */
 
-var express = require('express')
-  , routes = require('./routes')
-  , proxy = require('./routes/proxy')
-  , http = require('http')
-  , path = require('path');
+var express = require('express'),
+    routes = require('./routes'),
+    proxy = require('./routes/proxy'),
+    http = require('http'),
+    path = require('path');
 
 var app = express();
 
@@ -31,7 +31,7 @@ if ('development' == app.get('env')) {
 
 app.get('/', routes.index);
 app.get('/readme', require('./routes/readme'));
-require('./routes/api')(app, 'api')
+require('./routes/api')(app, 'api');
 
 http.createServer(app).listen(app.get('port'), function(){
   console.log('Express server listening on port ' + app.get('port'));
