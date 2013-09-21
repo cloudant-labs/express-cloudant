@@ -25,7 +25,11 @@ You're good to go!
 
 ## Configuration
 
-Express-Cloudant uses a `config.js` file to store credentials and the like. A sample one comes in the repo; edit it and enter your Cloudant credentials, **BUT DON'T GIT COMMIT IT!** You don't want your Cloudant password hanging out in plaintext on some public repo, do you?
+Express-Cloudant uses a `config.js` file to store credentials and the like. A sample one comes in the repo as `config.js.example`. Copy it and customize it by running this:
+
+    cp config.js.example config.js
+
+Now edit `confi.js`. It'd ignored by git, so you won't accidentally commit it.
 
 ## Running
 
