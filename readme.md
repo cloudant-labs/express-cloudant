@@ -25,11 +25,11 @@ You're good to go!
 
 ## Configuration
 
-Express-Cloudant uses a `config.js` file to store credentials and the like. A sample one comes in the repo as `config.js.example`. Copy it and customize it by running this:
+Express-Cloudant uses a `.env` file to store credentials and the like. A sample one comes in the repo as `env.example`. Copy it and customize it by running this:
 
-    cp config.js.example config.js
+    cp env.example .env
 
-Now edit `confi.js`. It'd ignored by git, so you won't accidentally commit it.
+Now edit `.env` with your Cloudant credentials. It's ignored by git, so you won't accidentally commit it.
 
 ## Running
 
