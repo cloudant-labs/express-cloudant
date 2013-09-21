@@ -33,9 +33,9 @@ Now edit `.env` with your Cloudant credentials. It's ignored by git, so you won'
 
 ## Running
 
-Do this:
+Once you have [Heroku's toolbelt](https://toolbelt.heroku.com/) installed, do this:
 
-    grunt && node app.js
+    foreman run grunt && foreman start
 
 This will...
 
