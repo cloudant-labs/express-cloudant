@@ -1,6 +1,5 @@
 var path = require('path'),
-    config = require(path.join(__dirname, '..', 'config')),
-    admin_url = "https://" + config.user + ":" + config.pass + "@" + config.user + ".cloudant.com",
+    admin_url = "https://" + process.env.USERNAME + ":" + process.env.PASSWORD + "@" + process.env.USERNAME + ".cloudant.com",
     nano = require('nano')(admin_url);
 
 module.exports = function(app, prefix){

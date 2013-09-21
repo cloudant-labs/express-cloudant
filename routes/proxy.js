@@ -1,7 +1,6 @@
 var request = require('request'),
     path = require('path'),
-    config = require(path.join(__dirname, '..', 'config')),
-    proxy_url = "https://" + config.user + ".cloudant.com";
+    proxy_url = "https://" + process.env.USERNAME + ".cloudant.com";
 
 module.exports = function(prefix){
   return function(req, res, next){
