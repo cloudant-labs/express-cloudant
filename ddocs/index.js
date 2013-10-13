@@ -1,6 +1,5 @@
 var fs = require('fs'),
     path = require('path'),
-    config = require(path.join(__dirname, '..', 'config')),
   // root of the Cloudant URL we'll push to
     admin_url = "https://" + process.env.USERNAME + ":" + process.env.PASSWORD + "@" + process.env.USERNAME + ".cloudant.com",
   // get paths to every design doc in the folder, excluding this file
