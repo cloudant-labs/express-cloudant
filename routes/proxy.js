@@ -1,7 +1,6 @@
-var request = require('request'),
-    proxy_url = "https://" + process.env.USERNAME + ".cloudant.com";
+var request = require('request');
 
-module.exports = function(prefix){
+module.exports = function(prefix, proxy_url){
   return function(req, res, next){
     var proxy_path = req.path.match(RegExp("^\\/" + prefix + "(.*)$"));
     if(proxy_path){
