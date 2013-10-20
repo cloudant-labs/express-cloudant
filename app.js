@@ -8,6 +8,9 @@ var express = require('express'),
     proxy = require('./routes/proxy'),
     http = require('http'),
     path = require('path'),
+    proxy_url = "https://"
+                + process.env.USERNAME
+                + ".cloudant.com",
     admin_url = "https://"
                 + process.env.USERNAME
                 + ":"
@@ -25,7 +28,7 @@ app.set('view engine', 'jade');
 app.use(express.favicon());
 app.use(express.logger('dev'));
 // all requests to /proxy* get forwarded to Cloudant through the proxy
-app.use(proxy('proxy', admin_url));
+app.use(proxy('proxy', proxy_url));
 app.use(express.bodyParser());
 app.use(express.methodOverride());
 app.use(app.router);
