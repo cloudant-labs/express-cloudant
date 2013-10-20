@@ -7,7 +7,17 @@ var express = require('express'),
     routes = require('./routes'),
     proxy = require('./routes/proxy'),
     http = require('http'),
-    path = require('path');
+    path = require('path'),
+    proxy_url = "https://"
+                + process.env.USERNAME
+                + ".cloudant.com",
+    admin_url = "https://"
+                + process.env.USERNAME
+                + ":"
+                + process.env.PASSWORD
+                + "@"
+                + process.env.USERNAME
+                + ".cloudant.com";
 
 var app = express();
 
@@ -18,7 +28,7 @@ app.set('view engine', 'jade');
 app.use(express.favicon());
 app.use(express.logger('dev'));
 // all requests to /proxy* get forwarded to Cloudant through the proxy
-app.use(proxy('proxy'));
+app.use(proxy('proxy', proxy_url));
 app.use(express.bodyParser());
 app.use(express.methodOverride());
 app.use(app.router);
@@ -31,7 +41,7 @@ if ('development' == app.get('env')) {
 
 app.get('/', routes.index);
 app.get('/readme', require('./routes/readme'));
-require('./routes/api')(app, 'api');
+require('./routes/api')(app, 'api', admin_url);
 
 http.createServer(app).listen(app.get('port'), function(){
   console.log('Express server listening on port ' + app.get('port'));

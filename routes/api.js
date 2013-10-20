@@ -1,16 +1,34 @@
 var path = require('path'),
-    admin_url = "https://" + process.env.USERNAME + ":" + process.env.PASSWORD + "@" + process.env.USERNAME + ".cloudant.com",
-    nano = require('nano')(admin_url);
+    pouchdb = require('pouchdb');
 
-module.exports = function(app, prefix){
+function connect (remote, db_name) {
+  var db = new pouchdb(db_name),
+      opts = {
+        continuous: true
+      };
+
+  db.replicate.to([remote, db_name].join('/'), opts);
+  db.replicate.from([remote, db_name].join('/'), opts);
+
+  return db;
+}
+
+module.exports = function(app, prefix, admin_url){
+  // sync with a cloudant database; for example, "crud"
+  var cloudant = connect(admin_url, 'crud');
+
+  // convenience method for generating route paths
+  // from the prefix and a given path
+  // good for, say, API versioning
   function makePath(path){
-    // convenience method for generating route paths
     var newPath = '/' + [prefix, path].join('/');
     return newPath;
   }
 
-  app.get(makePath(':name'), function(req, res){
-    // return the root of the named database
-    nano.db.get(req.params.name).pipe(res);
+  app.get(makePath('crud'), function(req, res){
+    // return the contents of the 'crud' database
+    cloudant.allDocs(req.query, function (err, body) {
+      res.json(err || body);
+    });
   });
 };
