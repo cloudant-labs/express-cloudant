@@ -1,7 +1,8 @@
-var pouchdb = require('pouchdb');
+var path_join = require('path').join,
+    pouchdb = require('pouchdb');
 
 function connect (remote, db_name) {
-  var db = new pouchdb(db_name),
+  var db = new pouchdb(path_join('data', db_name)),
       opts = {
         continuous: true
       };
