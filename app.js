@@ -8,16 +8,16 @@ var express = require('express'),
     proxy = require('./routes/proxy'),
     http = require('http'),
     path = require('path'),
-    proxy_url = "https://"
-                + process.env.USERNAME
-                + ".cloudant.com",
-    admin_url = "https://"
-                + process.env.USERNAME
-                + ":"
-                + process.env.PASSWORD
-                + "@"
-                + process.env.USERNAME
-                + ".cloudant.com";
+    proxy_url = "https://" +
+                process.env.USERNAME +
+                ".cloudant.com",
+    admin_url = "https://" +
+                process.env.USERNAME +
+                ":" +
+                process.env.PASSWORD +
+                "@" +
+                process.env.USERNAME +
+                ".cloudant.com";
 
 var app = express();
 
