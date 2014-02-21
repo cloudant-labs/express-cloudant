@@ -3,7 +3,7 @@ var fs = require('fs'),
   // root of the Cloudant URL we'll push to
     admin_url = "https://" + process.env.USERNAME + ":" + process.env.PASSWORD + "@" + process.env.USERNAME + ".cloudant.com",
   // get paths to every design doc in the folder, excluding this file
-    paths = fs.readdirSync(__dirname).filter(function(path){ return path !== "index.js"; }),
+    paths = fs.readdirSync(__dirname).filter(function(path){ return path !== "index.js" && path.match(/\.js$/); }),
     couchapps = {};
 
 // map paths and dbs to the object we'll pass to grunt-couchapp
