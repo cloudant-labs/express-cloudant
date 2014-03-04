@@ -21,8 +21,7 @@ module.exports = function(app, prefix, admin_url){
   // from the prefix and a given path
   // good for, say, API versioning
   function makePath(path){
-    var newPath = '/' + [prefix, path].join('/');
-    return newPath;
+    return '/' + [prefix, path].join('/');
   }
 
   app.get(makePath('crud'), function(req, res){
